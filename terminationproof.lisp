@@ -91,4 +91,8 @@
         ((equal 0 (mod denom (first base-factors))) (new-base-will-terminate-help (/ denom (first base-factors)) base-factors))
         (t (new-base-will-terminate-help denom (rest base-factors)))))#|ACL2s-ToDo-Line|#
 
+(thm (implies (and (posp denom) (lopp base-factors) (not (in2 1 base-factors)) (not (equal denom 1)) (not (equal base-factors nil)) (equal 0 (mod denom (first base-factors))))
+	      (< (new-base-help-measure (/ denom (first base-factors)) base-factors) (new-base-help-measure denom base-factors))))
 
+(thm (implies (and (posp denom) (lopp base-factors) (not (in2 1 base-factors)) (not (equal denom 1)) (not (equal base-factors nil)) (not (equal 0 (mod denom (first base-factors)))))
+	      (< (new-base-help-measure denom (rest base-factors)) (new-base-help-measure denom base-factors))))
