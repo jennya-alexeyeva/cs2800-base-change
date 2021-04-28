@@ -3,3 +3,9 @@
 (check= (new-base-will-terminate (list 10 (list 7) (list 0 5 3)) 10) t)
 (check= (new-base-will-terminate (list 2 (list 1) (list 1 1)) 3) t)
 (check= (new-base-will-terminate (list 10 nil (list 1 1)) 1000) t)
+
+(check= (new-base-will-terminate (list 10 (list 1) (list 8 2)) 14) t)
+(check= (new-base-will-terminate (list 10 (list 9) (list 6 3)) 7) nil)
+(check= (new-base-will-terminate (list 10 (list 8) (list 0 1)) 15) t)
+(check= (new-base-will-terminate (list 10 (list 9) (list 0 1)) 15) nil)
+(check= (new-base-will-terminate (list 10 (list 9 1) (list 4 3)) 5) nil)
